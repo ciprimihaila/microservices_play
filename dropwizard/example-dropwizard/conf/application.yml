@@ -1,0 +1,5 @@
+# configurations for our sayingFactory
+# export HELLOAPP_SAYING='Hello Dropwizard from'
+helloapp:
+
+  saying: ${HELLOAPP_SAYING:-Gutten Tag aus}
