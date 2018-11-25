@@ -1,0 +1,24 @@
+# project init 
+	spring init --build maven --groupId com.microservices.examples --version 1.0 --java-version 1.8 
+	--dependencies web --name springboot springboot
+	
+# start project
+	# inside MVN project
+		mvn clean package spring-boot:run
+		mvn clean install spring-boot:run -D server.port=9090
+	# outside MVN project
+		mvn clean package
+		java -jar target/springboot-1.0.jar
+	
+# API
+	/api/hola
+	/api/greeting
+	
+# API metrics
+	/actuator/beans
+	/actuator/env
+	/actuator/health
+	/actuator/metrics
+	/actuator/trace
+	/actuator/mappings
+	

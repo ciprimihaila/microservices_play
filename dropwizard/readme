@@ -1,0 +1,21 @@
+# project init 
+	mvn -B archetype:generate -DarchetypeGroupId=io.dropwizard.archetypes \
+		-DarchetypeArtifactId=java-simple -DarchetypeVersion=0.9.2 -DgroupId=com.microservices.examples.dropwizard
+		-DartifactId=dropwizard -Dversion=1.0 -Dname=ExampleDropwizard
+	mvn clean install
+	
+# start project
+	# inside MVN project
+		mvn clean package exec:java
+		mvn clean install exec:java -D dw.server.applicationConnectors[0].port=9090
+	# outside MVN project
+		mvn clean package
+		java -jar target/dropwizard-1.0.jar server conf/application.yml
+		
+# API
+	/api/hola
+	/api/greeting
+	
+# API metrics
+	http://localhost:8081/
+	

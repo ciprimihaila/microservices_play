@@ -1,0 +1,29 @@
+# project init 
+	install JBoss Forge
+	start forge console: bin/forge
+	addon-install --coordinate org.jboss.forge.addon:wildfly-swarm,1.0.0.Beta2
+	project-new
+	setup JAX-RS application: rest-setup --application-path=/
+	add WildFly Swarm configurations: wildfly-swarm-setup --context-path=/
+	new JAX-RS endpoint: rest-new-endpoint
+
+# run project 
+	# using JBoss Forge
+		forge
+		build
+		wildfly-swarm-run
+	# inside MVN project
+		mvn clean install wildflyswarm:run
+		mvn clean install wildfly-swarm:run -Dswarm.port.offset=1
+	# outside MVN project
+		mvn clean package
+		java -jar target/wildflyswarm-swarm.jar 
+	
+# API
+	/api/hola
+	/api/greeting
+
+# API metrics
+	/node
+	/heap
+	/threads

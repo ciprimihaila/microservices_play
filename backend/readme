@@ -1,0 +1,5 @@
+# start project
+	mvn clean install jetty:run
+	
+# api
+	/api/backend?greeting={Hello}
